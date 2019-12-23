@@ -4,7 +4,7 @@
 //**************************************************************************************** */
 
 function generateRange(min, max, step) {
-    newRange = [];
+    let newRange = [];
     for (let i = min; i <= max; i += step) {
         newRange.push(i)
     }
@@ -14,3 +14,16 @@ function generateRange(min, max, step) {
 generateRange(2, 19, 3);
 
 //**************************************************************************************** */
+// Complete the function that takes two integers(a, b, where a < b) and return an array of all integers between the input parameters, including them.
+//**************************************************************************************** */
+
+function between(a, b) {
+    let numbers = [];
+    for (let i = a; i <= b; i++) {
+        numbers.push(i);
+    }
+    return numbers;
+}
+
+between(3, 9)
+//***************************************************************************************** */
