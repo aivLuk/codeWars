@@ -40,3 +40,26 @@ function isDivisible(n, x, y) {
 
 isDivisible(90, 10, 3)
 //**************************************************************************************** */
+
+// Given an array / list[] of integers, Find The maximum difference between the successive elements in its sorted form.
+
+// **********************************************************************
+
+function maxGap(...numbers) {
+    numbers.sort((a, b) => a - b);
+    let diff = 0;
+    for (let i = 0; i < numbers.length; i++) {
+        let difference = numbers[i] - numbers[i + 1];
+        if (difference < 0) {
+            difference *= -1
+        }
+        if (difference > diff) {
+            diff = difference
+        }
+    }
+    return diff
+}
+
+maxGap(23, 41, 2, -21, 0, 3, -7)
+
+// ************************************************************************
