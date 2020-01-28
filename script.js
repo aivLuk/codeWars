@@ -63,3 +63,21 @@ function maxGap(...numbers) {
 maxGap(23, 41, 2, -21, 0, 3, -7)
 
 // ************************************************************************
+// Given an array / list[] of n integers, Separate The even numbers from the odds. Return evens in ascending way, odds in descending. No duplicate numbers
+// *************************************************************************
+function menFromBoys(arr) {
+    const evens = arr.filter(el => el % 2 === 0);
+    const odds = arr.filter(el => el % 2 !== 0);
+    const evensSort = evens.sort((a, b) => a - b);
+    const oddsSort = odds.sort((a, b) => b - a);
+    const sorted = [...evensSort, ...oddsSort];
+    const uniqueArray = [];
+    for (i = 0; i < sorted.length; i++) {
+        if (uniqueArray.indexOf(sorted[i]) === -1) {
+            uniqueArray.push(sorted[i]);
+        }
+    }
+    return uniqueArray;
+}
+
+menFromBoys([2, 9, -7, 4, 21, 36])
