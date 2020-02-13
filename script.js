@@ -100,3 +100,44 @@ function solution(str) {
 }
 
 solution('camelCasingSplitTest')
+
+// **********************************************************************
+// Pirates have notorious difficulty with enunciating. They tend to blur all the letters together and scream at people.
+
+// At long last, we need a way to unscramble what these pirates are saying.
+
+// Write a function that will accept a jumble of letters as well as a dictionary, and output a list of words that the pirate might have meant.
+
+// For example:
+
+// grabscrab("ortsp", ["sport", "parrot", "ports", "matey"])
+// Should return ["sport", "ports"].
+
+// Return matches in the same order as in the dictionary.Return an empty array if there are no matches.
+
+// ************************************************************************
+
+function grabscrab(anagram, dictionary) {
+    let anagramArray = Array.from(anagram)
+    anagramArray.sort((a, b) => a > b ? 1 : -1);
+    let joined = anagramArray.join('');
+
+    const sortedDictionary = [];
+
+    for (let i = 0; i < dictionary.length; i++) {
+        let arr = Array.from(dictionary[i]);
+        arr.sort((a, b) => a > b ? 1 : -1);
+        let dicJoined = arr.join('')
+        sortedDictionary.push(dicJoined)
+    }
+
+    const answer = [];
+    for (let i = 0; i < sortedDictionary.length; i++) {
+        if (sortedDictionary[i] === joined) {
+            answer.push(dictionary[i])
+        }
+    }
+    return answer;
+}
+
+grabscrab("ortsp", ["sport", "parrot", "ports", "matey"])
