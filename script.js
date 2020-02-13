@@ -72,7 +72,7 @@ function menFromBoys(arr) {
     const oddsSort = odds.sort((a, b) => b - a);
     const sorted = [...evensSort, ...oddsSort];
     const uniqueArray = [];
-    for (i = 0; i < sorted.length; i++) {
+    for (let i = 0; i < sorted.length; i++) {
         if (uniqueArray.indexOf(sorted[i]) === -1) {
             uniqueArray.push(sorted[i]);
         }
@@ -81,3 +81,22 @@ function menFromBoys(arr) {
 }
 
 menFromBoys([2, 9, -7, 4, 21, 36])
+
+// **********************************************************************
+// Complete the solution so that the function will break up camel casing, using a space between words.
+
+// ************************************************************************
+
+function solution(str) {
+    let newStr = '';
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] === str[i].toUpperCase()) {
+            newStr += ' ' + str[i];
+        } else {
+            newStr += str[i];
+        }
+    }
+    return newStr;
+}
+
+solution('camelCasingSplitTest')
