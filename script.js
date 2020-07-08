@@ -141,3 +141,32 @@ function grabscrab(anagram, dictionary) {
 }
 
 grabscrab("ortsp", ["sport", "parrot", "ports", "matey"])
+
+//*********************************************************** */
+// You are given an array(which will have a length of at least 3, but could be very large) containing integers.The array is either entirely comprised of odd integers or entirely comprised of even integers except for a single integer N.Write a method that takes the array as an argument and returns this "outlier" N.
+//************************************************************* */
+
+function findOutlier(integers) {
+    let oddsArray = [];
+    let evensArray = [];
+    integers.forEach(num => {
+        if (num % 2 === 0) {
+            evensArray.push(num)
+        } else {
+            oddsArray.push(num)
+        }
+    })
+    if (oddsArray.length === 1) {
+        return oddsArray[0]
+    } else {
+        return evensArray[0]
+    }
+}
+
+findOutlier([160, 3, 1719, 19, 11, 13, -21])
+
+//******************************************************************* */
+// In this Kata, you will be given a number n(n > 0) and your task will be to return the smallest square number N(N > 0) such that n + N is also a perfect square.If there is no answer, return -1(nil in Clojure, Nothing in Haskell).
+//******************************************************************** */
+
+
